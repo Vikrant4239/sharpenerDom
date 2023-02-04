@@ -16,9 +16,33 @@ for(let i=0;i<man.length;i++){
  man[i].style.backgroundColor="grey";
 }
 
-let nam = document.querySelector('li');
- nam.style.background="yellow";
+// let nam = document.querySelector('.list-group-item:nth-child(3)');
+ //nam.style.backgroundColor="green";
 
- let sam = document.querySelector('.btn');
- sam.style.backgroundColor="green";
- sam.value='jao';
+
+ //let nama = document.querySelector('.list-group-item:nth-child(2)');
+
+ //nama.remove();
+ 
+
+// let sam = document.querySelector('.btn');
+ //sam.style.backgroundColor="green";
+ //sam.value='jao';
+
+ //let sama = document.querySelectorAll('.list-group-item');
+ //for(let i =0;i<sama.length;i++){
+   // if(i==1){
+        //sama[i].style.backgroundColor='red';
+   // }
+   
+        
+    
+ //}
+
+ let odd = document.querySelectorAll('li:nth-child(odd)');
+ for(let i=0;i<odd.length;i++){
+    odd[i].style.backgroundColor='green';
+ }
+
+
+ 
