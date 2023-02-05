@@ -39,10 +39,38 @@ for(let i=0;i<man.length;i++){
     
  //}
 
- let odd = document.querySelectorAll('li:nth-child(odd)');
- for(let i=0;i<odd.length;i++){
-    odd[i].style.backgroundColor='green';
- }
+ //let odd = document.querySelectorAll('li:nth-child(odd)');
+ //for(let i=0;i<odd.length;i++){
+  //  odd[i].style.backgroundColor='green';
+ //}
+
+ let itemList = document.querySelector('#items');
+ //parent Node
+ console.log(itemList.parentNode);
+ itemList.parentNode.style.backgroundColor='purple';
+ //child node
+ console.log(itemList.children);
+ //specific child
+ itemList.children[2].style.backgroundColor='green';
+ //firstElementchild
+ itemList.firstElementChild.style.backgroundColor='yellow';
+ //lastElementchild
+ itemList.lastElementChild.style.backgroundColor='orange';
+ //next Sibling
+ console.log(itemList.nextElementSibling);
+ //previous sibling 
+ console.log(itemList.previousElementSibling);
+ //creating element
+ let newDiv = document.createElement('div');
+ newDiv.className='hello';
+ newDiv.id='hello1';
+ let newDivtext=document.createTextNode('HEllo');
+ newDiv.appendChild(newDivtext);
+ //adding them to ui
+ let container = document.querySelector('.container');
+ let h1 = document.querySelector('.list-group-items');
+ container.insertBefore(newDiv,h1);
+
 
 
  
