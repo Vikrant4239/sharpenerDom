@@ -75,30 +75,35 @@
         let time = document.getElementById('time1').value;
         let users=document.getElementById('userss');
         
-        //console.log('name:'+" "+name);
-        //console.log('mail:'+" "+mail);
-        //console.log('date:'+" "+date);
-        //console.log('time:'+" "+time);
-        // storing in local storage
-        /*localStorage.setItem('UserName',name);
+        console.log('name:'+" "+name);
+        console.log('mail:'+" "+mail);
+        console.log('date:'+" "+date);
+        console.log('time:'+" "+time);
+        
+        localStorage.setItem('UserName',name);
         localStorage.setItem('Email',mail);
         localStorage.setItem('Registered Date',date);
         localStorage.setItem('Registerd Time',time);
         console.log(localStorage.getItem('UserName'))
         ;
-        */
+        
         let myobj = {
             name1:name,mail1:mail,date1:date,time1:time
 
         }
-        console.log(myobj.name1);
         let myobj_serealized=JSON.stringify(myobj);
-        localStorage.setItem("myobj",myobj_serealized);
+       console.log(myobj.name1);
+        
+        localStorage.setItem(mail,myobj_serealized);
+    
 
-        //let li = document.createElement('li');
-        //li.appendChild(document.createTextNode(`${name}  : ${mail} `  ));
-        //users.append(li);
-
+       let li = document.createElement('li');
+       li.appendChild(document.createTextNode(`${name}  : ${mail} `  ));
+        users.append(li);
+        
+            localStorage.setItem(mail,myobj_serealized);
+      let myobj_deserial=JSON.parse(localStorage.getItem(mail));
+      console.log(myobj_deserial)
 
        
         
