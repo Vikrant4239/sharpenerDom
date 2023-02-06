@@ -73,19 +73,19 @@
         let mail = document.getElementById('mail1').value;
         let date = document.getElementById('date1').value;
         let time = document.getElementById('time1').value;
-        let users=document.getElementById('userss');
+        
         
         console.log('name:'+" "+name);
         console.log('mail:'+" "+mail);
         console.log('date:'+" "+date);
         console.log('time:'+" "+time);
         
-        localStorage.setItem('UserName',name);
+        /*localStorage.setItem('UserName',name);
         localStorage.setItem('Email',mail);
         localStorage.setItem('Registered Date',date);
         localStorage.setItem('Registerd Time',time);
         console.log(localStorage.getItem('UserName'))
-        ;
+        ;*/
         
         let myobj = {
             name1:name,mail1:mail,date1:date,time1:time
@@ -95,15 +95,39 @@
        console.log(myobj.name1);
         
         localStorage.setItem(mail,myobj_serealized);
-    
 
+       
+       
+       
+
+       
+       
+       
+       let users=document.getElementById('userss'); 
        let li = document.createElement('li');
-       li.appendChild(document.createTextNode(`${name}  : ${mail} `  ));
-        users.append(li);
+       li.textContent=myobj.name1+"::"+myobj.mail1;
+       let button = document.createElement('input');
+       button.type='button';
+       button.value='delete';
+       
+       
+       
+
+        button.addEventListener('click',(e)=>{
+        console.log('Kaahe tep diye');
+        e.preventDefault();
         
-            localStorage.setItem(mail,myobj_serealized);
+        localStorage.removeItem(myobj.mail1);
+        users.removeChild(li);
+        
+       })
+       li.appendChild(button);
+       users.appendChild(li);
+
+        
+      localStorage.setItem(mail,myobj_serealized);
       let myobj_deserial=JSON.parse(localStorage.getItem(mail));
-      console.log(myobj_deserial)
+      console.log(myobj_deserial);
 
        
         
